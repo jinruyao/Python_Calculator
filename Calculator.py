@@ -14,6 +14,8 @@ def multiply(x, y):
 
 # This function divides two numbers
 def divide(x, y):
+    if y == 0:
+        return "Error: Division by zero"
     return x / y
 
 
@@ -24,10 +26,10 @@ print("3.Multiply")
 print("4.Divide")
 
 while True:
-    # take input from the user
+    # Take input from the user
     choice = input("Enter choice(1/2/3/4): ")
 
-    # check if choice is one of the four options
+    # Check if choice is one of the four options
     if choice in ('1', '2', '3', '4'):
         try:
             num1 = float(input("Enter first number: "))
@@ -40,18 +42,21 @@ while True:
             print(num1, "+", num2, "=", add(num1, num2))
 
         elif choice == '2':
-            print("You enter code for #2 here")
-            # CODE HERE ENTERED
+            print(num1, "-", num2, "=", subtract(num1, num2))
+
         elif choice == '3':
-            print("You enter code for #3 here")
-            
+            print(num1, "*", num2, "=", multiply(num1, num2))  # Updated for multiplication
+
         elif choice == '4':
-            print("You enter code for #4 here")
-            
-        # check if user wants another calculation
-        # break the while loop if answer is no
+            result = divide(num1, num2)
+            if isinstance(result, str):  # Check if division returned an error message
+                print(result)
+            else:
+                print(num1, "/", num2, "=", result)
+
+        # Check if user wants another calculation
         next_calculation = input("Let's do next calculation? (yes/no): ")
-        if next_calculation == "no":
-          break
+        if next_calculation.lower() == "no":
+            break
     else:
         print("Invalid Input")
