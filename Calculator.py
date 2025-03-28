@@ -1,5 +1,4 @@
-# This function adds two numbers
-# NAME: M McMahon
+# NAME: Yao Yao
 
 def add(x, y):
     return x + y
@@ -40,8 +39,7 @@ while True:
             print(num1, "+", num2, "=", add(num1, num2))
 
         elif choice == '2':
-            print("You enter code for #2 here")
-            # CODE HERE ENTERED
+            print(num1, "-", num2, "=", subtract(num1, num2))
         elif choice == '3':
             print("You enter code for #3 here")
             
